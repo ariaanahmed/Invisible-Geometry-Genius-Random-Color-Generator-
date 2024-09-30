@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="bg-gray-300">
+        <nav
+            class=" container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-0 py-2 md:py-3">
+            <div class="logo">
+                <h1 class="text-3xl font-bold">Invisible</h1>
+                <h5 class="font-medium text-gray-600">Geometry Genius</h5>
+            </div>
+            <div class="menu">
+                <button class="btn btn-info">
+                    <a href="#">Blog</a>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container mx-auto mt-5 px-4">
+            <div class="flex flex-col md:flex-col lg:flex-row gap-5">
+                <!-- calculator section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 order-2 lg:order-1 gap-3">
+                    <!-- triangle -->
+                    <div class="card w-full border" id="triangle">
+
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/triangle.png" alt="triangle" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Triangle</h2>
+                            <p> Area (A) = 0.5 X b X h </p>
+
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <input id="triangleBase" class="input input-bordered w-full" type="text" placeholder="b (cm)">
+                                <input id="triangleHeight" class="input input-bordered w-full" type="text" placeholder="h (cm)">
+                            </div>
+
+                            <div>
+                                <button onclick="calculateTriangle()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rectangle -->
+                    <div class="card w-full border" id="rectangle">
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/rectangle.png" alt="rectangle" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Rectangle</h2>
+                            <p> Area (A) = w x I</p>
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <input id="rectangleW" class="input input-bordered w-full" type="text" placeholder="w (cm)">
+                                <input id="reactangleI" class="input input-bordered w-full" type="text" placeholder="l (cm)">
+                            </div>
+                            <div>
+                                <button onclick="calculateRectangle()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Parallelogram -->
+                    <div class="card w-full border" id="parallelogram">
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/parallelogram.png" alt="Parallelogram" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Parallelogram</h2>
+                            <p> Area (A) = b x h</p>
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <p>
+                                    b=<span id="parallelogramB">10</span>cm, h=<span id="parallelogramH">12</span>cm
+                                </p>
+                            </div>
+                            <div>
+                                <button onclick="calculateParallelogramH()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Rhombus -->
+                    <div class="card w-full border" id="rhombus">
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/rhombus.png" alt="Rhombus" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Rhombus</h2>
+                            <p> Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub> </p>
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <p>d<sub>1</sub> = <span id="rhombusD1">16</span>cm, d<sub>2</sub> = <span id="rhombusD2">8</span>cm</p>
+                            </div>
+                            <div>
+                                <button onclick="calculateRhombus()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pentagon -->
+                    <div class="card w-full border" id="pentagon">
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/pentagon.png" alt="Pentagon" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Pentagon</h2>
+                            <p> Area (A) = 0.5 x p x b </p>
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <p>p = <span id="pentagonP">6</span>cm, b = <span id="pentagonB">10</span>cm</p>
+                            </div>
+                            <div>
+                                <button onclick="calculatePentagon()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ellipse -->
+                    <div class="card w-full border" id="ellipse">
+                        <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/ellipse.png" alt="Ellipse" />
+
+                        <div class="card-body text-center">
+                            <h2 class="font-bold">Ellipse</h2>
+                            <p> Area (A) = πab </p>
+                            <div class="input-divs flex flex-col md:flex-row gap-2">
+                                <p>a = <span id="ellipseA">10</span>cm, b = <span id="ellipseB">4</span>cm</p>
+                            </div>
+                            <div>
+                                <button onclick="calculateEllipse()" class="btn btn-primary w-full">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- calculaton section -->
+                <div class=" border rounded-xl p-4 order-1 lg:order-2 lg:h-96 lg:w-96 sticky top-0">
+                    <h1 class="text-center">Area Calculation</h1>
+                    <div> Triangle area: <span id="triangleResult">0</span> </div>
+                    <div> Rectangle area: <span id="rectangleResult">0</span> </div>
+                    <div> Parallelogram area: <span id="parallelogramResult">0</span> </div>
+                    <div> Rhombus area: <span id="rhombusResult">0</span> </div>
+                    <div> Pentagon area: <span id="pentagonResult">0</span> </div>
+                    <div> Ellipse area: <span id="ellipseResult">0</span> </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-5">
+        <div class="bg-slate-200 py-9 text-center">
+            <h1>All rights reserved @ <span id="year">2022</span></h1>
+        </div>
+    </footer>
+
+    <script src="./js/triangle.js"></script>
+</body>
+
+</html>
