@@ -31,7 +31,7 @@
                 <!-- calculator section -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 order-2 lg:order-1 gap-3">
                     <!-- triangle -->
-                    <div class="card w-full border" id="triangle" onmouseover="triangleColor()">
+                    <div class="card w-full border" id="triangle" onclick="triangleColor()">
 
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/triangle.png" alt="triangle" />
 
@@ -51,7 +51,7 @@
                     </div>
 
                     <!-- rectangle -->
-                    <div class="card w-full border" id="rectangle" onmouseover="rectangleColor()">
+                    <div class="card w-full border" id="rectangle" onclick="rectangleColor()">
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/rectangle.png" alt="rectangle" />
 
                         <div class="card-body text-center">
@@ -68,7 +68,7 @@
                     </div>
                     
                     <!-- Parallelogram -->
-                    <div class="card w-full border" id="parallelogram" onmouseover="parallelogramColor()">
+                    <div class="card w-full border" id="parallelogram" onclick="parallelogramColor()">
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/parallelogram.png" alt="Parallelogram" />
 
                         <div class="card-body text-center">
@@ -86,7 +86,7 @@
                     </div>
                     
                     <!-- Rhombus -->
-                    <div class="card w-full border" id="rhombus" onmouseover="rhombusColor()">
+                    <div class="card w-full border" id="rhombus" onclick="rhombusColor()">
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/rhombus.png" alt="Rhombus" />
 
                         <div class="card-body text-center">
@@ -102,7 +102,7 @@
                     </div>
                     
                     <!-- Pentagon -->
-                    <div class="card w-full border" id="pentagon" onmouseover="pentagonColor()">
+                    <div class="card w-full border" id="pentagon" onclick="pentagonColor()">
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/pentagon.png" alt="Pentagon" />
 
                         <div class="card-body text-center">
@@ -118,7 +118,7 @@
                     </div>
                     
                     <!-- Ellipse -->
-                    <div class="card w-full border" id="ellipse" onmouseover="ellipseColor()">
+                    <div class="card w-full border" id="ellipse" onclick="ellipseColor()">
                         <img class="p-4 w-72 h-60 mx-auto" src="./geometry-genius-resources/images/ellipse.png" alt="Ellipse" />
 
                         <div class="card-body text-center">
@@ -143,6 +143,8 @@
                     <div> Rhombus area: <span id="rhombusResult">0</span> </div>
                     <div> Pentagon area: <span id="pentagonResult">0</span> </div>
                     <div> Ellipse area: <span id="ellipseResult">0</span> </div>
+                    <div> Color: <span id="colorCode">#ffffff</span> </div>
+                    <div class="font-bold text-sm capitalize border border-black text-center my-5 p-1 rounded-lg">Click to Cards to Get RGB Code</div>
                 </div>
 
             </div>

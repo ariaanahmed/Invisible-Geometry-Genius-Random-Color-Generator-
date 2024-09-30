@@ -144,7 +144,9 @@ function getColorId (elementId) {
 
 // set the color
 function setBackgroundColor(card) {
+    const colorCode = document.getElementById('colorCode')
     const color = colorGenerator();
+    colorCode.innerText = color;
     card.style.backgroundColor = color;
 }
 
