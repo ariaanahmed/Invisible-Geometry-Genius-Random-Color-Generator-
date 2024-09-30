@@ -38,101 +38,118 @@ const calculateRectangle = () => {
 
 // parallelogram
 const calculateParallelogramH = () => {
-
-    const parallelogramB = document.getElementById('parallelogramB').innerText;
-    const b = parseFloat(parallelogramB);
-
-    const parallelogramH = document.getElementById('parallelogramH').innerText;
-    const h = parseFloat(parallelogramH);
-
-    const parallelogramResult = document.getElementById('parallelogramResult');
+    const b = getInputValueById('parallelogramB');
+    const h = getInputValueById('parallelogramH');
 
     const area = b * h;
-
-    parallelogramResult.innerText = area;
+    setCalculationResult('parallelogramResult', area);
 }
 
 // rhombus
 function calculateRhombus() {
-    const rhombusResult = document.getElementById('rhombusResult');
-
-    const rhombusD1 = document.getElementById('rhombusD1').innerText;
-    const d1 = parseFloat(rhombusD1);
-
-    const rhombusD2 = document.getElementById('rhombusD2').innerText;
-    const d2 = parseFloat(rhombusD2);
+    const d1 = getInputValueById('rhombusD1');
+    const d2 = getInputValueById('rhombusD2');
 
     const area = 0.5 * (d1 * d2);
-
-    rhombusResult.innerText = area.toFixed(2);
+    setCalculationResult('rhombusResult', area)
 }
 
 // pentagon
 function calculatePentagon() {
-    const pentagonResult = document.getElementById('pentagonResult');
-
-    const pentagonP = document.getElementById('pentagonP').innerText;
-    const p = parseFloat(pentagonP);
-
-    const pentagonB = document.getElementById('pentagonB').innerText;
-    const b = parseFloat(pentagonB)
+    const p = getInputValueById('pentagonP');
+    const b = getInputValueById('pentagonB');
 
     const area = 0.5 * (p * b);
-    pentagonResult.innerText = area.toFixed(2);
 
+    setCalculationResult('pentagonResult', area)
 }
 
 
 // ellipse
 function calculateEllipse() {
-    const ellipseResult = document.getElementById('ellipseResult');
-
-    const ellipseA = document.getElementById('ellipseA').innerText;
-    const a = parseFloat(ellipseA);
-
-    const ellipseB = document.getElementById('ellipseB').innerText;
-    const b = parseFloat(ellipseB);
+    const a = getInputValueById('ellipseA');
+    const b = getInputValueById('ellipseB');
 
     const area = 3.143 * (a * b);
-    console.log('hello');
 
-    ellipseResult.innerText = area;
+    setCalculationResult('ellipseResult', area)
     
 }
 
+// reusable functions get value by ids
+function getInputValueById(inputFieldId) {
+    const inputField = document.getElementById(inputFieldId);
+    const inputValueText = inputField.innerText;
+    const value = parseFloat(inputValueText);
+    return value
+}
+
+// set inner value
+function setCalculationResult (elementId, area) {
+    const element = document.getElementById(elementId)
+    element.innerText = area.toFixed(2);
+
+}
+
+// ------------------color section-------------
 // color generator
 const colorGenerator = () => {
     const red = Math.floor(Math.random() * 255);
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
-
     return `rgb(${red}, ${green}, ${blue})`
 }
 
-// triangle.addEventListener('mouseover', () => {
-//     const bgColor = colorGenerator()
-//     triangle.style.backgroundColor = bgColor
-// })
+// triangle
+function triangleColor () {
+    const card = getColorId('triangle');
+    setBackgroundColor(card) 
+}
 
-const triangle = document.getElementById('triangle');
-triangle.style.backgroundColor = colorGenerator();
+// rectangle
+function rectangleColor() {
+    const card = getColorId('rectangle');
+    setBackgroundColor(card) 
+}
 
-const rectangle = document.getElementById('rectangle');
-rectangle.style.backgroundColor = colorGenerator();
+// parallelogram
+function parallelogramColor() {
+    const card = getColorId('parallelogram');
+    setBackgroundColor(card) 
+}
 
-const parallelogram = document.getElementById('parallelogram');
-parallelogram.style.backgroundColor = colorGenerator();
+// rhombus
+function rhombusColor() {
+    const card = getColorId('rhombus');
+    setBackgroundColor(card) 
+}
 
-const rhombus = document.getElementById('rhombus');
-rhombus.style.backgroundColor = colorGenerator();
+// pentagon
+function pentagonColor() {
+    const card = getColorId('pentagon');
+    setBackgroundColor(card) 
+}
 
-const pentagon = document.getElementById('pentagon');
-pentagon.style.backgroundColor = colorGenerator();
+// ellipse
+function ellipseColor() {
+    const card = getColorId('ellipse');
+    setBackgroundColor(card) 
+}
 
-const ellipse = document.getElementById('ellipse');
-ellipse.style.backgroundColor = colorGenerator();
+// give me the id
+function getColorId (elementId) {
+    const id = document.getElementById(elementId)
+    return id;
+}
 
-// footer function
+// set the color
+function setBackgroundColor(card) {
+    const color = colorGenerator();
+    card.style.backgroundColor = color;
+}
+
+
+// footer
 const yearText = document.getElementById('year');
 const fullYear = new Date().getFullYear();
 yearText.innerText = fullYear;
